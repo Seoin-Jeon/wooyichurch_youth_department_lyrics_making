@@ -1,0 +1,5 @@
+{
+  "name": "LyricSlide Pro",
+  "description": "An automated PowerPoint slide generator for song lyrics. Features customizable fonts, sizes, and smart slide splitting based on paragraph breaks.",
+  "requestFramePermissions": []
+}
