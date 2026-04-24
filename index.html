@@ -26,7 +26,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+    font-family: 'HG꼬딕씨 80g', 'DM Sans', 'Noto Sans KR', sans-serif;
     background: var(--bg);
     color: var(--text);
     height: 100vh;
@@ -581,6 +581,9 @@
       <div class="control-group" style="margin-bottom:10px">
         <label>한글 폰트</label>
         <select id="korFont">
+          <option value="HG꼬딕씨 80g">HG꼬딕씨 80g</option>
+          <option value="Pretendard">Pretendard</option>
+          <option value="페이퍼로지">페이퍼로지 4 Regular</option>
           <option value="Noto Sans KR">Noto Sans KR</option>
           <option value="Malgun Gothic">맑은 고딕</option>
           <option value="Nanum Gothic">나눔 고딕</option>
@@ -601,6 +604,20 @@
           <option value="Montserrat">Montserrat</option>
           <option value="Playfair Display">Playfair Display</option>
         </select>
+      </div>
+      <div>
+        <label for="fontWeight">Font Weight</label>
+
+        <input 
+          type="range" 
+          id="fontWeight" 
+          min="100" 
+          max="900" 
+          step="100" 
+          value="400"
+        >
+
+        <span id="weightValue">400</span>
       </div>
     </div>
 
@@ -1127,6 +1144,15 @@ function showAiHelp() {
 
 // Initial render
 renderPreview();
+
+  const weightSlider = document.getElementById("fontWeight");
+  const weightValue = document.getElementById("weightValue");
+
+  weightSlider.addEventListener("input", function () {
+    const weight = this.value;
+    weightValue.textContent = weight;
+    document.body.style.fontWeight = weight;
+  });
 </script>
 </body>
 </html>
